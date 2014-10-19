@@ -12,9 +12,9 @@ namespace ProvaTecnica.Rh.DAL
         protected override void Seed(ApplicationDbContext context)
         {
             var candidatos = new List<Candidato>  {
-                new Candidato{idCandidato = 1, nomeCandidato = "Ricardo Aleixo", email ="ricardoaleixoo@gmail.com", telefoneCandidato = "(44) 9881-3556"},
-                new Candidato{idCandidato = 2, nomeCandidato = "Patricia de Souza", email ="patricia@gmail.com", telefoneCandidato = "(11) 9988-7766"},
-                new Candidato{idCandidato = 3, nomeCandidato = "Candidato de Jesus", email ="cand@gmail.com", telefoneCandidato = "(22) 9666-1266"}
+                new Candidato{idCandidato = 1, nomeCandidato = "Ricardo Aleixo", email ="ricardoaleixoo@gmail.com", telefoneCandidato = "(44) 9881-3556", Vaga = {nomeVaga = "Desenvolvedor Sênior"}},
+                new Candidato{idCandidato = 2, nomeCandidato = "Patricia de Souza", email ="patricia@gmail.com", telefoneCandidato = "(11) 9988-7766", Vaga = {nomeVaga = "Desenvolvedor Sênior"}},
+                new Candidato{idCandidato = 3, nomeCandidato = "Candidato de Jesus", email ="cand@gmail.com", telefoneCandidato = "(22) 9666-1266", Vaga = {nomeVaga = "Desenvolvedor Sênior"}}
             };
 
             candidatos.ForEach(s => context.Candidato.Add(s));
