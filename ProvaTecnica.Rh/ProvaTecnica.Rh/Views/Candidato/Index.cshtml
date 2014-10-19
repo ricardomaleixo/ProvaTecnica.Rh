@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ProvaTecnica.Rh.Models.Candidato>
+
+@{
+    ViewBag.Title = "Cadastro de Candidato";
+}
+
+<h2>Listagem de candidatos</h2>
+
+<p>
+    @Html.ActionLink("Novo Candidato", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeCandidato)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.telefoneCandidato)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) { 
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeCandidato)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.telefoneCandidato)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idCandidato }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.idCandidato }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idCandidato })
+        </td>
+    </tr>
+}
+
+</table>

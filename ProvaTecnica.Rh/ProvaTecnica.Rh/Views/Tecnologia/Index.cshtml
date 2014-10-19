@@ -1,0 +1,39 @@
+﻿@model IEnumerable<ProvaTecnica.Rh.Models.Tecnologia>
+
+@{
+    ViewBag.Title = "Listagem";
+}
+
+<h2>Listagem das tecnologias</h2>
+
+<p>
+    @Html.ActionLink("Nova tecnologia", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeTecnologia)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.peso)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeTecnologia)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.peso)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idTecnologia }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.idTecnologia }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idTecnologia })
+        </td>
+    </tr>
+}
+
+</table>

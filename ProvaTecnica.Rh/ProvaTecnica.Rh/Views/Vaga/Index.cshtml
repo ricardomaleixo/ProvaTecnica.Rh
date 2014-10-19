@@ -1,0 +1,33 @@
+﻿@model IEnumerable<ProvaTecnica.Rh.Models.Vaga>
+
+@{
+    ViewBag.Title = "Listagem";
+}
+
+<h2>Listagem das Vagas</h2>
+
+<p>
+    @Html.ActionLink("Nova vaga", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.nomeVaga)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.nomeVaga)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "Edit", new { id=item.idVaga }) |
+            @Html.ActionLink("Visualizar", "Details", new { id=item.idVaga }) |
+            @Html.ActionLink("Excluir", "Delete", new { id=item.idVaga })
+        </td>
+    </tr>
+}
+
+</table>
